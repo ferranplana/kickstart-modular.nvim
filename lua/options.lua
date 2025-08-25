@@ -71,4 +71,10 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Set indentation to 2 spaces
+vim.opt.expandtab = true -- use spaces instead of tabs
+vim.opt.shiftwidth = 2 -- number of spaces per indentation level
+vim.opt.softtabstop = 2 -- number of spaces a <Tab> counts for in insert mode
+vim.opt.tabstop = 2 -- number of spaces a <Tab> counts for (display)
+
 -- vim: ts=2 sts=2 sw=2 et
