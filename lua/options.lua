@@ -80,4 +80,7 @@ vim.opt.shiftwidth = 2 -- number of spaces per indentation level
 vim.opt.softtabstop = 2 -- number of spaces a <Tab> counts for in insert mode
 vim.opt.tabstop = 2 -- number of spaces a <Tab> counts for (display)
 
+-- requirement for "rcarriga/nvim-notify"
+vim.opt.termguicolors = true
+
 -- vim: ts=2 sts=2 sw=2 et

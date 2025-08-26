@@ -3,6 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+  { 'mtdl9/vim-log-highlighting' },
   { 'nvim-tree/nvim-web-devicons', opts = {} },
   {
     'xiyaowong/transparent.nvim',
@@ -42,5 +43,33 @@ return {
     -- function: code to be executed after highlight groups are cleared
     -- Also the user event "TransparentClear" will be triggered
     on_clear = function() end,
+  },
+  {
+    'folke/snacks.nvim',
+    ---@type snacks.Config
+    opts = {
+      notifier = {
+        -- your notifier configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+        enabled = true,
+        timeout = 3000,
+      },
+    },
+  },
+  {
+    -- 'folke/noice.nvim',
+    -- event = 'VeryLazy',
+    -- opts = {
+    --   -- add any options here
+    -- },
+    -- dependencies = {
+    --   -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    --   'MunifTanjim/nui.nvim',
+    --   -- OPTIONAL:
+    --   --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   --   If not available, we use `mini` as the fallback
+    --   -- 'rcarriga/nvim-notify',
+    -- },
   },
 }
