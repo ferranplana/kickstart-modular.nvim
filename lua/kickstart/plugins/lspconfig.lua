@@ -266,7 +266,6 @@ return {
           basedpyright = {
             disableOrganizeImports = true,
             analysis = {
-              logLevel = 'Information',
               autoSearchPaths = true,
               useLibraryCodeForTypes = true,
               diagnosticMode = 'openFilesOnly',
