@@ -208,9 +208,9 @@ sudo apt install make gcc ripgrep unzip git xclip neovim
 <details><summary>Ubuntu Install Steps</summary>
 
 ```
-sudo add-apt-repository ppa:neovim-ppa/unstable -y
+sudo add-apt-repository ppa:neovim-ppa/stable -y
 sudo apt update
-sudo apt install make gcc ripgrep unzip git xclip neovim
+sudo apt install make gcc ripgrep unzip git xclip python3-venv python3-pip python3-pynvim neovim
 ```
 </details>
 <details><summary>Debian Install Steps</summary>
@@ -240,7 +240,7 @@ sudo dnf install -y gcc make git ripgrep fd-find unzip neovim
 <details><summary>Arch Install Steps</summary>
 
 ```
-sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
+sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip wl-clipboard python-pynvim python-pip neovim
 ```
 </details>
 
