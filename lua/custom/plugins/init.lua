@@ -56,20 +56,24 @@ return {
         timeout = 3000,
       },
     },
+    init = function()
+      vim.keymap.set('n', '<leader>n', function()
+        Snacks.notifier.show_history()
+      end, { desc = 'Notification History' })
+    end,
   },
   {
-    -- 'folke/noice.nvim',
-    -- event = 'VeryLazy',
-    -- opts = {
-    --   -- add any options here
-    -- },
-    -- dependencies = {
-    --   -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    --   'MunifTanjim/nui.nvim',
-    --   -- OPTIONAL:
-    --   --   `nvim-notify` is only needed, if you want to use the notification view.
-    --   --   If not available, we use `mini` as the fallback
-    --   -- 'rcarriga/nvim-notify',
-    -- },
+    'ggml-org/llama.vim',
+    init = function()
+      vim.g.llama_config = {
+        endpoint = 'http://127.0.0.1:8080/infill',
+        enable_at_startup = false,
+      }
+      vim.keymap.set('n', '<leader>tl', '<cmd>LlamaToggle<CR>', { desc = '[T]oggle [L]lama.cpp' })
+    end,
   },
+  -- {
+  --   'Joakker/lua-json5',
+  --   build = './install.sh',
+  -- },
 }

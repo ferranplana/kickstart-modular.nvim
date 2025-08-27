@@ -256,6 +256,7 @@ return {
         'stylua', -- Used to format Lua code
         'ruff',
         'basedpyright',
+        'uv', -- venv and python package manager (used in nvim-dap-python)
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
