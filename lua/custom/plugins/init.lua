@@ -55,6 +55,7 @@ return {
         enabled = true,
         timeout = 3000,
       },
+      dashboard = {},
     },
     init = function()
       vim.keymap.set('n', '<leader>n', function()
@@ -72,8 +73,15 @@ return {
       vim.keymap.set('n', '<leader>tl', '<cmd>LlamaToggle<CR>', { desc = '[T]oggle [L]lama.cpp' })
     end,
   },
-  -- {
-  --   'Joakker/lua-json5',
-  --   build = './install.sh',
-  -- },
+  { 'dstein64/nvim-scrollview' },
+  {
+    'amitds1997/remote-nvim.nvim',
+    version = '*', -- Pin to GitHub releases
+    dependencies = {
+      'nvim-lua/plenary.nvim', -- For standard functions
+      'MunifTanjim/nui.nvim', -- To build the plugin UI
+      'nvim-telescope/telescope.nvim', -- For picking b/w different remote methods
+    },
+    config = true,
+  },
 }
