@@ -1,3 +1,13 @@
+local function legacy_branch(main, legacy)
+  local is_legacy = (vim.version().minor < 11) and not vim.version().prerelease
+  if is_legacy then
+    vim.schedule(function()
+      vim.notify(string.format('[Lazy] Mason install using legacy branch `%s` (Neovim < 0.11).', legacy), vim.log.levels.WARN, { title = 'Lazy.nvim' })
+    end)
+  end
+  return is_legacy and legacy or main
+end
+
 -- LSP Plugins
 return {
   {
@@ -19,7 +29,7 @@ return {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       -- Mason must be loaded before its dependents so we need to set it up here.
       -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-      { 'mason-org/mason.nvim', opts = {} },
+      { 'mason-org/mason.nvim', opts = {}, branch = legacy_branch('main', 'v1.x') },
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -257,6 +267,8 @@ return {
         'ruff',
         'basedpyright',
         'uv', -- venv and python package manager (used in nvim-dap-python)
+        'jq',
+        'pymarkdownlnt',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
